@@ -31,7 +31,14 @@
                             <outlet property="delegate" destination="G0B-My-cFc" id="Mfb-IK-2Ck"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="CantForget" id="guA-y0-IPl"/>
+                    <navigationItem key="navigationItem" title="CantForget" id="guA-y0-IPl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5iv-QJ-fpn">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="G0B-My-cFc" id="iN9-Jj-NIQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fX8-qv-vbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

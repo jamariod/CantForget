@@ -12,9 +12,14 @@ class CantForgetViewController: UITableViewController {
 
     var itemArray = ["Find Mike", "Buy Eggs", "Get Milk"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let items = defaults.array(forKey: "CantForgetListArray") as? [String] {
+            itemArray = items
+        }
     }
     
     //MARK -Tableview Datasource Methods
@@ -58,6 +63,8 @@ class CantForgetViewController: UITableViewController {
             //what will happen once the user clicks the Add Item button on our UIAlert
            
             self.itemArray.append(textField.text!)
+            
+            self.defaults.set(self.itemArray, forKey: "CantForgetListArray")
             
             self.tableView.reloadData()
         
